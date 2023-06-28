@@ -39,4 +39,3 @@ findSingleprofile: (profileId) => {
 
 module.exports = Profile;
 
-

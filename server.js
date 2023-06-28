@@ -5,6 +5,8 @@ const sessions = require('./middlewares/sessions')
 const usersController =require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
 const profilesController = require('./controllers/profiles_controller')
+const session = require('express-session');
+const connectionsController = require('./controllers/connections_controller');
 
 if (process.env.NODE_ENV === 'production') {
   const path = require('path')
@@ -33,6 +35,5 @@ app.use(sessions)
 app.use('/api/profiles', profilesController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-
 
 

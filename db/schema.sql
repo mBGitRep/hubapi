@@ -19,6 +19,13 @@ CREATE TABLE profiles(
     location TEXT,
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
+INSERT INTO profiles(name, image_url, position, education, description, location)
+        VALUES ('SuperMan', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Hero', 'BS', 'Superhero', 'USA'),
+('Ironlady', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Actress', 'Diploma', 'Amazing', 'USA'),
+('Batman', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Villian', 'None', 'Eats alot', 'Australia'),
+('Samantha', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Cartoon', 'Phd', 'Amazing Human', 'London'),
+('Superwome', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Housewife', 'Masters', 'Saves Hungry Kids only', 'Germany'),
+('Ironman', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Miner', 'Highschool', 'Digs really well', 'NewZealand');
 
 
 

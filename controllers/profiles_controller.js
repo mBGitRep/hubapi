@@ -1,23 +1,23 @@
-const express = require("express")
+const express = require("express");
 const router = express.Router();
 
-const Profile = require('../models/profile')
+const Profile = require('../models/profile');
 const User = require('../models/user');
+const Connection = require('../middlewares/connection');
 
 router.get("/",(req, res) => {
     Profile
         .findAll()
         .then(profiles => res.json(profiles));
-})
+});
 
 router.post("/",(req,res) => {
     const { name, image_url, position, education, description, location } = req.body;
     const userId = req.session.userId;
 
-
     Profile
         .create(name, image_url, position, education, description, location, userId)
-        .then((profile) => res.json(profile))
+        .then((profile) => res.json(profile));
 });
 
 router.delete("/:id",(req,res) => {
@@ -25,21 +25,24 @@ router.delete("/:id",(req,res) => {
     
     Profile
         .delete(profileId)
-        .then(() => res.json({message: "deleted successfully"}))
-})
+        .then(() => res.json({message: "deleted successfully"}));
+});
 
 router.get("/search", (req, res) => {
   const profileId = req.query.p; // Accessing the 'p' query parameter
-  console.log(profileId)
+  console.log(profileId);
   Profile
     .findSingleprofile(profileId) // Use the profileId in the query
-    .then(data => res.json({ profile : data }));
+    .then(data => res.json({ profile: data }));
 });
 
+router.post("/:id/connect", (req, res) => {
+  const { id: profileId } = req.params;
+  const { userId: senderId } = req.session;
+
+  Connection
+    .create(senderId, profileId)
+    .then((connection) => res.json(connection));
+});
 
 module.exports = router;
-
-
-
-
-
