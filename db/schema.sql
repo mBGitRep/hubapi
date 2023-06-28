@@ -20,14 +20,28 @@ CREATE TABLE profiles(
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
+
+
 CREATE TABLE searches(
     id SERIAL PRIMARY KEY,
     profile_name TEXT,
     profile_position TEXT,
     profile_education TEXT,
-    profile_location TEXT,
-    FOREIGN KEY(profile_name) REFERENCES profiles(name),
-    FOREIGN KEY(profile_position) REFERENCES profiles(position),
-    FOREIGN KEY(profile_education) REFERENCES profiles(education),
-    FOREIGN KEY(profile_location) REFERENCES profiles(location)
+    profile_location TEXT
+
 );
+
+ALTER TABLE profiles
+ADD CONSTRAINT profiles_name_unique UNIQUE (name),
+ADD CONSTRAINT profiles_position_unique UNIQUE (position),
+ADD CONSTRAINT profiles_location_unique UNIQUE (location);
+
+
+
+
+
+ALTER TABLE profiles
+ADD CONSTRAINT profiles_name_unique UNIQUE (name),
+ADD CONSTRAINT profiles_position_unique UNIQUE (position),
+ADD CONSTRAINT profiles_location_unique UNIQUE (location);
+

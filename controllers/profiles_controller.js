@@ -27,9 +27,9 @@ router.delete('/:id',(req,res) => {
         .then(() => res.json({message: 'deleted successfully'}))
 })
 
-router.get('/search/', (req, res) => {
+router.get('/search', (req, res) => {
   const profileId = req.query.p; // Accessing the 'p' query parameter
-  console.log(profileId)
+//   console.log(profileId)
   Profile
     .findSingleprofile(profileId) // Use the profileId in the query
     .then(data => res.json({profile : data}));
@@ -37,3 +37,4 @@ router.get('/search/', (req, res) => {
 
 
 module.exports = router;
+
