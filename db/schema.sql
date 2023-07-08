@@ -20,12 +20,13 @@ CREATE TABLE profiles(
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
 INSERT INTO profiles(name, image_url, position, education, description, location)
-        VALUES ('SuperMan', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Hero', 'BS', 'Superhero', 'USA'),
-('Ironlady', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Actress', 'Diploma', 'Amazing', 'USA'),
-('Batman', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Villian', 'None', 'Eats alot', 'Australia'),
-('Samantha', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Cartoon', 'Phd', 'Amazing Human', 'London'),
-('Superwome', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Housewife', 'Masters', 'Saves Hungry Kids only', 'Germany'),
-('Ironman', 'https://nssdc.gsfc.nasa.gov/planetary/banner/uranus.gif', 'Miner', 'Highschool', 'Digs really well', 'NewZealand');
+        VALUES ('SuperMan', 'https://imgur.com/roFXvfn.jpg', 'Hero', 'BS', 'Superhero', 'USA'),
+('Ironlady', 'https://imgur.com/FelQY2Q.jpg', 'Actress', 'Diploma', 'Amazing', 'USA'),
+('Batman', 'https://imgur.com/YTm4E9P.jpg', 'Villian', 'None', 'Eats alot', 'Australia'),
+('Samantha', 'https://imgur.com/I2bRrMJ.jpg', 'Cartoon', 'Phd', 'Amazing Human', 'London'),
+('Superwomen', 'https://imgur.com/vQtAMLc.jpg', 'Housewife', 'Masters', 'Saves Hungry Kids only', 'Germany'),
+('Ironman', 'https://imgur.com/F5jnVyB.jpg', 'Miner', 'Highschool', 'Digs really well', 'NewZealand');
+
 
 
 
