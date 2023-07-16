@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/api/message', (req, res) => {
   res.json({ message: 'Hello from the server4545434545!' });
 });
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 // Start the server
 app.listen(port, () => {
   console.log('Server is listening on port 5000');
